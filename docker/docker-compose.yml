@@ -51,7 +51,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      - ../volumes/postgres_data:/var/lib/postgresql/data
+      - chatwiki_postgres_data:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:5432
     networks:
@@ -284,3 +284,6 @@ services:
 networks:
   chatwiki_network:
     driver: bridge
+
+volumes:
+  chatwiki_postgres_data:

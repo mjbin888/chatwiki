@@ -23,7 +23,7 @@ function toLogin(to, from, next) {
 // }
 
 function setTitle(to, companyInfo) {
-  let str = `Chatwiki ` + `${companyInfo?.name || '开源大模型企业知识库问答系统'}`
+  let str = `旗鱼智能客服 ` + `${companyInfo?.name || '让IT服务触手可及'}`
   if (to.meta.title) {
     document.title = to.meta.title + ' - ' + str
   } else {
@@ -37,12 +37,12 @@ router.beforeEach(async (to, from, next) => {
   if (to.query.lang) {
     const localeStore = useLocaleStoreWithOut()
     const { changeLocale } = useLocale()
-    
+
     const validLocales = localeStore.getLocaleMap.map(v => v.lang)
-    
+
     if (validLocales.includes(to.query.lang)) {
       await changeLocale(to.query.lang)
-      
+
       // 移除 URL 中的 lang 参数
       const query = { ...to.query }
       delete query.lang
@@ -76,11 +76,11 @@ router.beforeEach(async (to, from, next) => {
       next({ path: '/', query: to.query })
     } else {
       await checkPermission()
-      
+
       const name = checkSystemPermisission(to)
       if (name === 'AccountManage') {
-          next(`/user/account`)
-          return
+        next(`/user/account`)
+        return
       }
       next()
     }

@@ -22,6 +22,7 @@
       <div class="banner"></div>
       <div class="sign-in">
         <h2 class="project-name">{{ companyName }}</h2>
+        <div class="project-slogan">旗鱼智能客服，让IT服务触手可及</div>
         <div class="sign-in-content">
           <!-- Sign In Form Column -->
           <div class="col-form">
@@ -162,7 +163,7 @@ const lang = computed(() => localeStore.getCurrentLocale.lang)
 
 const companyStore = useCompanyStore()
 !companyStore.name && companyStore.getCompanyInfo();
-const companyName = companyStore.name || 'ChatWiki'
+const companyName = companyStore.name || '旗鱼智能客服'
 
 const { t } = useI18n('views.login.login')
 
@@ -486,12 +487,24 @@ onUnmounted(() => {
 
 .project-name {
   position: absolute;
-  top: -53px;
+  top: -68px;
   width: calc(100% - 40px);
   text-align: center;
   font-weight: bolder;
   color: #2475FC;
   font-size: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.project-slogan {
+  position: absolute;
+  top: -36px;
+  width: calc(100% - 40px);
+  text-align: center;
+  color: #8a9ab5;
+  font-size: 13px;
+  font-weight: 400;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

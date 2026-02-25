@@ -34,7 +34,8 @@ const handleLogoClick = () => {
 .admin-logo {
   display: block;
   line-height: 1;
-  height: 28px;
+  height: 40px;
+  width: auto;
   cursor: pointer;
 }
 .system-name{

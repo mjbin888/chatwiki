@@ -34,3 +34,20 @@ docker/dev/
 static/home/
 config_dev/
 Makefile
+
+# runtime log files
+internal/**/*.log
+internal/**/*.log.*
+
+# volumes data (database/cache runtime data, do not commit)
+volumes/
+
+# backup svg files generated during logo replacement
+front-end/chat-ai-admin-vue/src/assets/*_old.svg
+
+# node_modules
+front-end/**/node_modules/
+
+# frontend build output (generated on server)
+static/chat-ai-admin/
+static/open-doc/
